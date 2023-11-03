@@ -30,6 +30,7 @@
                 <label for="orgao">Órgão</label>
                 <input type="text" class="form-control" id="orgao" required>
             </div>
+            <!-- Equipamentos -->
             <div class="form-group">
                 <label for="equipamento">Equipamento</label>
                 <select class="form-control" name="equipamento" id="equipamento">
@@ -56,6 +57,7 @@
                     <option value="Memória 2 GB">Memória 2 GB</option>
                     <option value="Memória 4 GB">Memória 4 GB</option>
                     <option value="Memória 8 GB">Memória 8 GB</option>
+                    <option value="Notebook">Notebook</option>
                     <option value="Pilha AA">Pilha AA</option>
                     <option value="Pilha AAA">Pilha AAA</option>
                     <option value="Placa de Vídeo">Placa de Vídeo</option>
@@ -70,23 +72,31 @@
                     <option value="Transformador 200 VA">Transformador 200 VA</option>
                 </select>
             </div>
+            <!-- Defeito -->
             <div class="form-group">
                 <label for="defeito">Defeito</label>
                 <select class="form-control" name="defeito" id="defeito">
                     <option hidden>Defeito</option>
                     <option>Arquivo Apagado</option>
-                    <option>Cooler</option>
-                    <option>Fonte</option>
-                    <option>Gabinete</option>
-                    <option>HD</option>
-                    <option>Memória</option>
-                    <option>Placa Mãe</option>
-                    <option>Placa Mãe/Cooler/Fonte</option>
-                    <option>SSD</option>
+                    <option value="Base Quebrada">Base Quebrada</option>
+                    <option value="Bateria">Bateria</option>
+                    <option value="Carregador">carregador</option>
+                    <option value="Cooler">Cooler</option>
+                    <option value="Fonte">Fonte</option>
+                    <option value="Gabinete">Gabinete</option>
+                    <option value="HD">HD</option>
+                    <option value="Memória">Memória</option>
+                    <option value="Placa Mãe">Placa Mãe</option>
+                    <option value="Placa Mãe/Cooler/Fonte">Placa Mãe/Cooler/Fonte</option>
+                    <option value="SSD">SSD</option>
+                    <option value="Touchpad">Touchpad</option>
+                    <option value="Teclado">Teclado</option>
+                    <option value="Tela">Tela</option>
                 </select>
             </div>
+            <!-- Serviço Realizado -->
             <div class="form-group">
-                <label for="realizados">Serviços Realizados</label>
+                <label for="realizados">Serviço Realizados</label>
                 <select class="form-control" name="realizados" id="realizados">
                     <option value="" hidden>Serviço Realizado</option>
                     <option value="Backup">Backup</option>
@@ -96,6 +106,12 @@
                     <option value="Manutenção">Manutenção</option>
                     <option value="OTRS">OTRS</option>
                     <option value="Revisão">Revisão</option>
+                    <option value="Troca de Bateria">Troca de Bateria</option>
+                    <option value="Troca de Teclado">Troca de Teclado</option>
+                    <option value="Troca de Tela">Troca de Tela</option>
+                    <option value="Troca de Touchpad">Troca de Touchpad</option>
+                    <option value="Reparo de Base">Reparo de Base</option>
+                    <option value="Limpeza">Limpeza</option>
                     <option value="Upgrade">Upgrade</option>
                 </select>
             </div>
