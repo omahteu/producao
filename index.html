@@ -188,17 +188,7 @@
             const status = document.getElementById('status').value;
             const observacao = document.getElementById('observacao').value;
 
-            const registro = {
-                tecnico,
-                patrimonio,
-                orgao,
-                equipamento,
-                defeito,
-                realizados,
-                verificacao,
-                status,
-                observacao
-            };
+            const registro = {tecnico, patrimonio, orgao, equipamento,  defeito, realizados, verificacao, status, observacao};
 
             const registros = JSON.parse(localStorage.getItem('registros')) || [];
 
@@ -223,22 +213,38 @@
 
             registros.forEach((e, index)=> {
 
-                registrosList.innerHTML += `
-                    <tr>
-                        <td>${e.tecnico}</td>
-                        <td>${e.patrimonio}</td>
-                        <td>${e.orgao}</td>
-                        <td>${e.equipamento}</td>
-                        <td>${e.defeito}</td>
-                        <td>${e.realizados}</td>
-                        <td>${e.verificacao}</td>
-                        <td>${e.status}</td>
-                        <td>${e.observacao}</td>
-                        <td><button class="btn btn-danger" onclick="excluirRegistro(${e.index})">Excluir</button></td>
-                        <td><button class="btn btn-info" onclick="editarRegistro(${index})">Editar</button></td>
-                        
-                    </tr>
-                `
+                if (e.verificacao.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    const dataParts = e.verificacao.split("-");
+                    if (dataParts.length === 3) {
+                        const ano = dataParts[0];
+                        const mes = dataParts[1];
+                        const dia = dataParts[2];
+                        const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                        registrosList.innerHTML += `
+                            <tr>
+                                <td>${e.tecnico}</td>
+                                <td>${e.patrimonio}</td>
+                                <td>${e.orgao}</td>
+                                <td>${e.equipamento}</td>
+                                <td>${e.defeito}</td>
+                                <td>${e.realizados}</td>
+                                <td>${dataFormatada}</td>
+                                <td>${e.status}</td>
+                                <td>${e.observacao}</td>
+                                <td><button class="btn btn-danger" onclick="excluirRegistro(${e.index})">Excluir</button></td>
+                                <td><button class="btn btn-info" onclick="editarRegistro(${index})">Editar</button></td>
+                                
+                            </tr>
+                        `
+                    } else {
+                        console.log("Data inválida");
+                    }
+                } else {
+                console.log("Data no formato incorreto");
+                }
+
+
             });
 
             registros.forEach((registro, index) => {
